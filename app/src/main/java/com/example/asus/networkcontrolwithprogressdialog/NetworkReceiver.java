@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.Window;
+import android.widget.Toast;
 
 public class NetworkReceiver extends BroadcastReceiver {
 
@@ -36,6 +37,7 @@ public class NetworkReceiver extends BroadcastReceiver {
 
         if(isOnline(context) == false){
             dialogNetwork.show();//When "isOnline" function return false the progresdialog will be shown
+            Toast.makeText(context,"No connections are available",Toast.LENGTH_LONG).show();
         }
         else {
             dialogNetwork.dismiss();//When "isOnline" function return true the progresdialog will be shown
